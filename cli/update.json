@@ -1,0 +1,17 @@
+{
+    "name": "aws_neptune_v2",
+    "version": "1.2.0",
+    "author": "bluebricks@example.com",
+    "data": {
+        "outs": [
+            "endpoint"
+        ],
+        "props": {
+            "region": "us-east-1"
+        },
+        "packages": [
+            "aws",
+            "neptune"
+        ]
+    }
+}

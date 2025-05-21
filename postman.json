@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "2da44de8-cc3b-47f5-87fe-5dfee609f0c6",
+		"name": "Blueprints API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36819352"
+	},
+	"item": [
+		{
+			"name": "Create Blueprint",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"aws_neptune\",\n  \"version\": \"1.1.0\",\n  \"author\": \"bluebricks@example.com\",\n  \"data\": {\n    \"packages\": [\"aws\", \"neptune\"],\n    \"props\": {\"region\": \"us-east-1\"},\n    \"outs\": [\"endpoint\"]\n  }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/blueprints",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"blueprints"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Blueprints",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/blueprints",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"blueprints"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Blueprints with Filters",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/blueprints?author=bluebricks@example.com&version=1.1.0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"blueprints"
+					],
+					"query": [
+						{
+							"key": "author",
+							"value": "bluebricks@example.com"
+						},
+						{
+							"key": "version",
+							"value": "1.1.0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Blueprint by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/blueprints/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"blueprints",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Blueprint",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"aws_neptune_updated\",\n  \"version\": \"1.2.0\",\n  \"author\": \"bluebricks@example.com\",\n  \"blueprint_data\": {\n    \"packages\": [\"aws\", \"neptune\"],\n    \"props\": {\"region\": \"us-west-2\"},\n    \"outs\": [\"endpoint\", \"port\"]\n  }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/blueprints/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"blueprints",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Blueprint",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/blueprints/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"blueprints",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
