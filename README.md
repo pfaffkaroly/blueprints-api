@@ -172,7 +172,7 @@ The `--file` argument expects a JSON file with following structure:
   "name": "aws_neptune",
   "version": "1.1.0",
   "author": "bluebricks@example.com",
-  "blueprint_data": {
+  "data": {
     "packages": ["aws"],
     "props": { "region": "us-east-1" },
     "outs": ["endpoint"]
